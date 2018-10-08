@@ -1,0 +1,9 @@
+GIMP Palette
+Name: Color palette by Paletton.com #12F0u0kmCmuEyzghYP9sGhuHGayColumns: 4
+
+#
+ 84 156  46     primary 0
+ 79 225   0     primary 1
+154 243 106     primary 2
+ 50 121  13     primary 3
+ 25  73   0     primary 4
