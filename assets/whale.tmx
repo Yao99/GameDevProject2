@@ -84,6 +84,6 @@
 </data>
  </layer>
  <objectgroup name="objectsLayer">
-  <object id="2" name="ball" type="player" gid="18" x="1974.67" y="1150.67" width="32" height="32"/>
+  <object id="2" name="ball" type="playerStart" gid="18" x="1974.67" y="1150.67" width="32" height="32"/>
  </objectgroup>
 </map>

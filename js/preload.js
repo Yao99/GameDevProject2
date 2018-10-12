@@ -15,6 +15,10 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("Duck", "assets/duckmanCar_sheetpixeld.png", 300, 301);
 	game.load.spritesheet("BlueTed", "assets/DMBlueTed_sheet.png", 100, 210);
 	game.load.spritesheet("PinkTed", "assets/DMPinkTed_sheet.png", 100, 210);
+	
+	//whale game
+	game.load.tilemap("WhaleMap", "assets/whale.json", null, Phaser.Tilemap.TILED_JSON);
+	game.load.image("WhaleTiles", "assets/placeholder whale.png");
 };
 
 preloadState.prototype.create = function(){
