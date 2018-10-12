@@ -3,17 +3,14 @@ let game0State = function(){
 };
 
 game0State.prototype.create = function(){
-	game.stage.backgroundColor = '#182d3b';
+	this.BG = game.add.sprite(0, 0, "DuckBG");
+	this.BG.animations.add("only", [0, 1], 5, true);
+	this.BG.animations.play("only");
 
-	button0 = game.add.button(game.world.centerX - 95, 800, "button", actionOnClick, this, 0, 3, 3);
+	
 };
 
 game0State.prototype.update = function(){
 
 };
 
-function actionOnClick () {
-
-    game.state.start("Game");
-
-}
