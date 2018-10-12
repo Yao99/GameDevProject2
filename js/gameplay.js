@@ -9,7 +9,7 @@ gameplayState.prototype.create = function(){
 	// globally enable the arcade-style physics system
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	
-	game.add.sprite(0,0, "sky");
+	game.add.sprite(1000,0, "sky");
 	
 	// groups work differently. You enable physics on the whole group, and
 	// add sprites to them using the group's own create function
@@ -17,7 +17,7 @@ gameplayState.prototype.create = function(){
 	this.platforms.enableBody = true;
 	
 	let ground = this.platforms.create(0, game.world.height - 64, "platform");
-	ground.scale.set(2,2);
+	ground.scale.set(4,4);
 	ground.body.immovable = true;
 	
 	// adding two platforms to the platform group, but we need to access their rigidbodies individually
