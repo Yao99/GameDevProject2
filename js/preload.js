@@ -13,6 +13,8 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("button", "assets/button_sprite_sheet_StartAgainExit.png", 192, 71);
 	game.load.spritesheet("murph", "assets/character.png", 32, 48);
 	game.load.spritesheet("Duck", "assets/duckmanCar_sheetpixeld.png", 300, 301);
+	game.load.spritesheet("BlueTed", "assets/DMBlueTed_sheet.png", 100, 210);
+	game.load.spritesheet("PinkTed", "assets/DMPinkTed_sheet.png", 100, 210);
 };
 
 preloadState.prototype.create = function(){
