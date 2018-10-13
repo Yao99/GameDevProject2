@@ -14,7 +14,12 @@ game0State.prototype.create = function(){
 	game.physics.enable(this.player, Phaser.Physics.ARCADE);
 	this.player.body.collideWorldBounds = true;
 
-	game.time.events.repeat(Phaser.Timer.SECOND * 2, 100, createTed, this);
+	this.Teds = game.add.group();
+	this.Teds.enableBody = true;
+
+	game.time.events.repeat(Phaser.Timer.SECOND * 0.5, 1000, createTed, this);
+
+
 };
 
 game0State.prototype.update = function(){
@@ -49,17 +54,21 @@ game0State.prototype.update = function(){
         this.player.body.velocity.setTo(0, 0);
     }
 
-    
+    game.physics.arcade.overlap(this.player, this.Teds, this.onHit, null, this);
 
     
 };
 
 function createTed(){
-    	let y_temp = game.world.randomY;
-    	while(y_temp < 137.5 || y_temp > 850 - 210 + 137.5){
+    	var y_temp = game.world.randomY;
+    	while(y_temp < 137.5 || y_temp > 850 - 200 + 137.5){
     		y_temp = game.world.randomY;
     	}
-    	var Ted = game.add.sprite(2125 - 100 + 155.5, y_temp, "BlueTed");
+    	let Ted = this.Teds.create(2125 - 100 + 155.5, y_temp, "BlueTed");
     	game.physics.enable(Ted, Phaser.Physics.ARCADE);
-    	Ted.body.velocity.setTo(-100, 0);
+    	Ted.body.velocity.setTo(- (Math.floor(Math.random() * 1000) + 1500), 0);
+}
+
+game0State.prototype.onHit = function(player, Ted){
+    	Ted.kill();
 }
