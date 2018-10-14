@@ -17,7 +17,7 @@ game0State.prototype.create = function(){
 	this.Teds = game.add.group();
 	this.Teds.enableBody = true;
 
-	game.time.events.repeat(Phaser.Timer.SECOND * 0.5, 1000, createTed, this);
+	game.time.events.repeat(Phaser.Timer.SECOND * 0.2, 1000, createTed, this);
 
 
 };
@@ -55,20 +55,39 @@ game0State.prototype.update = function(){
     }
 
     game.physics.arcade.overlap(this.player, this.Teds, this.onHit, null, this);
-
-    
+    this.Teds.forEach(checkifout, this, true);
 };
 
 function createTed(){
+		var ok = false;
     	var y_temp = game.world.randomY;
+    	var color_string;
     	while(y_temp < 137.5 || y_temp > 850 - 200 + 137.5){
     		y_temp = game.world.randomY;
+    		ok = true;
     	}
-    	let Ted = this.Teds.create(2125 - 100 + 155.5, y_temp, "BlueTed");
-    	game.physics.enable(Ted, Phaser.Physics.ARCADE);
-    	Ted.body.velocity.setTo(- (Math.floor(Math.random() * 1000) + 1500), 0);
+    	if(ok){
+    		var color = Math.floor(Math.random() * 2) + 1;
+    		if( color == 1){
+    			color_string = "BlueTed";
+    		}
+    		else{
+    			color_string = "PinkTed";
+    		}
+    		let Ted = this.Teds.create(2125 - 100 + 155.5, y_temp, color_string);
+    		Ted.body.velocity.setTo(- (Math.floor(Math.random() * 1000) + 1500), 0);
+    		ok = false;
+    	}
+    	
 }
 
 game0State.prototype.onHit = function(player, Ted){
-    	Ted.kill();
+    	Ted.body.velocity.setTo((Math.floor(Math.random() * 1000) + 2500), -2000);
+    		Ted.angle += 100;
+}
+
+function checkifout(Ted){
+    	if(Ted.x > 2125 + 155.5 || Ted.y < 135.5 || Ted.x < 155.5){
+    		Ted.kill();
+    	}
 }
