@@ -19,6 +19,7 @@ preloadState.prototype.preload = function(){
 	//whale game
 	game.load.tilemap("WhaleMap", "assets/whale.json", null, Phaser.Tilemap.TILED_JSON);
 	game.load.image("WhaleTiles", "assets/placeholder whale.png");
+	game.load.spritesheet("golfball", "assets/golfball.png");
 };
 
 preloadState.prototype.create = function(){

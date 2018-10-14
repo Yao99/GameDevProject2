@@ -25,19 +25,19 @@
         }, 
         {
          "draworder":"topdown",
-         "name":"objectsLayer",
+         "name":"player",
          "objects":[
                 {
-                 "gid":18,
-                 "height":32,
-                 "id":2,
+                 "height":0,
+                 "id":5,
                  "name":"ball",
+                 "point":true,
                  "rotation":0,
-                 "type":"playerStart",
+                 "type":"ball",
                  "visible":true,
-                 "width":32,
-                 "x":1974.66666666667,
-                 "y":1150.66666666667
+                 "width":0,
+                 "x":1982,
+                 "y":1116
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -45,7 +45,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":3,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

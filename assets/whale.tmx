@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="77" height="36" tilewidth="32" tileheight="32" infinite="0" nextobjectid="3">
+<map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="77" height="36" tilewidth="32" tileheight="32" infinite="0" nextobjectid="8">
  <tileset firstgid="1" name="whale" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="placeholder whale.png" width="256" height="256"/>
  </tileset>
@@ -83,7 +83,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2684354562,2684354562,2684354562,2684354562,2684354562,2684354562,2684354562,2684354562,2684354562,2684354562,0,0,0,0,0,0,0,0,0,3221225474,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="objectsLayer">
-  <object id="2" name="ball" type="playerStart" gid="18" x="1974.67" y="1150.67" width="32" height="32"/>
+ <objectgroup name="player">
+  <object id="5" name="ball" type="ball" x="1982" y="1116">
+   <point/>
+  </object>
  </objectgroup>
 </map>
