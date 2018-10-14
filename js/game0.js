@@ -17,13 +17,12 @@ game0State.prototype.create = function(){
 	this.Teds = game.add.group();
 	this.Teds.enableBody = true;
 
-	game.time.events.repeat(Phaser.Timer.SECOND * 0.2, 1000, createTed, this);
+	game.time.events.repeat(Phaser.Timer.SECOND * 0.3, 1000, createTed, this);
 
 
 };
 
 game0State.prototype.update = function(){
-
 	if (game.input.mousePointer.isDown)
     {
         //  400 is the speed it will move towards the mouse
@@ -64,8 +63,8 @@ function createTed(){
     	var color_string;
     	while(y_temp < 137.5 || y_temp > 850 - 200 + 137.5){
     		y_temp = game.world.randomY;
-    		ok = true;
     	}
+    	ok = true;
     	if(ok){
     		var color = Math.floor(Math.random() * 2) + 1;
     		if( color == 1){
@@ -77,8 +76,9 @@ function createTed(){
     		let Ted = this.Teds.create(2125 - 100 + 155.5, y_temp, color_string);
     		Ted.body.velocity.setTo(- (Math.floor(Math.random() * 1000) + 1500), 0);
     		ok = false;
-    	}
-    	
+    		Ted.animations.add("only", [0, 1], 10, true);
+			Ted.animations.play("only");
+    	}    	
 }
 
 game0State.prototype.onHit = function(player, Ted){
