@@ -28,19 +28,33 @@ game3State.prototype.create = function(){
 	
 	//the camera will follow the player in the world
 	this.game.camera.follow(this.player);
+	
+	//reference value for velocity setting
+	var velocity = 0;
+	//reference value for dist to cursor
+	var dist = 0;
+	
+	//hp
+	life = 5;
 };
 
 game3State.prototype.update = function(){
 	
-	game.input.onDown.add(this.movey, this);
+	game.input.onDown.add(this.mover, this);
 	
 	this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
 	
 };
 
-game3State.prototype.movey = function(){
+game3State.prototype.mover = function(){
 	
-	game.physics.arcade.moveToPointer(this.player, 200);
+	dist = game.physics.arcade.distanceToPointer(this.player);
+	
+	velocity = dist/1.5;
+	if(velocity>400){ velocity = 400 }
+	else if(velocity<125){ velocity = 125 };
+	
+	game.physics.arcade.moveToPointer(this.player, velocity);
 	//this.player.body.angularVelocity = 10;
 
 	//  if it's overlapping the mouse, don't move any more
@@ -50,8 +64,9 @@ game3State.prototype.movey = function(){
 		
 	}
 	
-}
+};
 
 game3State.prototype.failure = function(){
-	
-}
+	life -= 1;
+	game.camera.flash(0xffffff, 200);
+};
