@@ -28,7 +28,7 @@ preloadState.prototype.preload = function(){
 	game.load.image("Transition10", "assets/Transition PNGs/Ta10.png");
 	game.load.image("Transition11", "assets/Transition PNGs/Ta11.png");
 	game.load.image("Transition12", "assets/Transition PNGs/Ta12.png");
-	
+	game.load.image("Title", "assets/Title/TitleCandyVersion.png");
 	//whale game
 	game.load.tilemap("WhaleMap", "assets/whale.json", null, Phaser.Tilemap.TILED_JSON);
 	game.load.image("WhaleTiles", "assets/placeholder whale.png");
