@@ -17,9 +17,10 @@ game3State.prototype.create = function(){
 	this.backgroundLayer.resizeWorld();
 
 	//create player
-	this.player = game.add.sprite(500, 500, "golfball");
+	this.player = game.add.sprite(1982, 1116, "golfball");
 	
 	game.physics.enable(this.player, Phaser.Physics.ARCADE);
+	this.player.body.allowDrag = true;
 	this.player.body.collideWorldBounds = true;
 	
 	//the camera will follow the player in the world
@@ -31,34 +32,23 @@ game3State.prototype.update = function(){
 	if (game.input.mousePointer.isDown)
     {
         //  400 is the speed it will move towards the mouse
-        game.physics.arcade.moveToPointer(this.player, 600);
+        game.physics.arcade.moveToPointer(this.player, 200);
+		//this.player.body.angularVelocity = 10;
 
         //  if it's overlapping the mouse, don't move any more
         if (Phaser.Rectangle.contains(this.player.body, game.input.x, game.input.y))
         {
             this.player.body.velocity.setTo(0, 0);
         }
-        if (this.player.x < 155.5)
-        {
-            this.player.x = 155.5;
-        }
-        if(this.player.x > 2125 - 300 + 155.5){
-        	this.player.x = 2125 - 300  + 155.5;
-        }
-        if (this.player.y < 137.5)
-        {
-            this.player.y = 137.5;
-        }
-        if(this.player.y > 850 - 300 + 137.5){
-        	this.player.y = 850 - 300  + 137.5;
-        }
     }
     else
     {
-        this.player.body.velocity.setTo(0, 0);
+        this.player.body.drag.x = 150;
+		this.player.body.drag.y = 150;
+		//this.player.body.angularDrag = 1;
     }
 	
-	//this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
+	this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
 	
 };
 
