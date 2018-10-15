@@ -4,6 +4,7 @@ let game3State = function(){
 
 game3State.prototype.create = function(){
 	
+	this.win = false;
 	game.stage.backgroundColor = '#182d3b';
 	
 	this.map = this.game.add.tilemap("WhaleMap");
@@ -18,6 +19,7 @@ game3State.prototype.create = function(){
 	this.backgroundLayer.resizeWorld();
 
 	//create player
+	//1982 1116
 	this.player = game.add.sprite(1982, 1116, "golfball");
 	
 	game.physics.enable(this.player, Phaser.Physics.ARCADE);
@@ -44,22 +46,23 @@ game3State.prototype.create = function(){
 
 game3State.prototype.update = function(){
 	
-	game.input.onDown.add(this.mover, this);
+	if(this.win == false){
+		game.input.onDown.add(this.mover, this);
 	
-	this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
+		this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
+	}
 	
-	if(this.player.y < 192)
+	
+	if(this.player.y < 192 && this.win == false)
 	{
-		var graphics = game.add.graphics(0, 0);
-		graphics.lineStyle(2, 0x0000FF, 1);
-		graphics.beginFill(0x0000FF, 1);
-		graphics.drawRect(0, 0, 2432, 1120);
-		graphics.endFill();
+		this.WBG = game.add.sprite(0, 0, "BlueW");
 		
 		//victory animation
 		this.BG = game.add.sprite(155.5, 137.5, "WhaleEnd");
 		this.BG.animations.add("only", [0, 1], 3, true);
 		this.BG.animations.play("only");
+		this.game.camera.follow();
+		this.win = true;
 	}
 	
 };

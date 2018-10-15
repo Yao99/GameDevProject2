@@ -50,6 +50,7 @@ transState.prototype.update = function(){
 	if(counter == 360){
 		if(preloadState.level_num == -1){
 			game.state.start("Game3");
+			counter = 0;
 		}
 	}
 
