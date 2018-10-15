@@ -28,20 +28,35 @@ game3State.prototype.create = function(){
 
 game3State.prototype.update = function(){
 	
-	game.input.onDown.add(move, this);
+	if (game.input.mousePointer.isDown)
+    {
+        //  400 is the speed it will move towards the mouse
+        game.physics.arcade.moveToPointer(this.player, 600);
 
-	function move() {
-		// will only ever be called once, when the the input is down
-		game.physics.arcade.moveToPointer(this.player, 400);
-	}
-	
-	//Drag
-	if(this.player.velocity>0){
-		this.player.body.velocity -= 5;
-	}
-	else{
-		this.player.body.velocity = 0;
-	}
+        //  if it's overlapping the mouse, don't move any more
+        if (Phaser.Rectangle.contains(this.player.body, game.input.x, game.input.y))
+        {
+            this.player.body.velocity.setTo(0, 0);
+        }
+        if (this.player.x < 155.5)
+        {
+            this.player.x = 155.5;
+        }
+        if(this.player.x > 2125 - 300 + 155.5){
+        	this.player.x = 2125 - 300  + 155.5;
+        }
+        if (this.player.y < 137.5)
+        {
+            this.player.y = 137.5;
+        }
+        if(this.player.y > 850 - 300 + 137.5){
+        	this.player.y = 850 - 300  + 137.5;
+        }
+    }
+    else
+    {
+        this.player.body.velocity.setTo(0, 0);
+    }
 	
 	//this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
 	

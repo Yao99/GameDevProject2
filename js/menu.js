@@ -16,6 +16,6 @@ menuState.prototype.update = function(){
 
 function actionOnClick1 () {
 
-    game.state.start("Game0");
+    game.state.start("Game3");
 
 }
