@@ -5,6 +5,7 @@ let preloadState = function(){
 };
 
 preloadState.prototype.preload = function(){
+	level_num = 0;
 	game.load.image("sky", "assets/sky.png");
 	game.load.image("platform", "assets/platform.png");
 	game.load.image("star", "assets/star.png");
@@ -15,6 +16,7 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("Duck", "assets/duckmanCar_sheetpixeld.png", 300, 301);
 	game.load.spritesheet("BlueTed", "assets/DMBlueTed_sheet.png", 100, 200);
 	game.load.spritesheet("PinkTed", "assets/DMPinkTedsheet.png", 100, 200);
+	game.load.image("Transition", "assets/TransSpriteSheet.png");
 	
 	//whale game
 	game.load.tilemap("WhaleMap", "assets/whale.json", null, Phaser.Tilemap.TILED_JSON);
