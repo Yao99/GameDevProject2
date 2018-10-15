@@ -34,6 +34,7 @@ preloadState.prototype.preload = function(){
 	game.load.image("WhaleTiles", "assets/placeholder whale.png");
 	game.load.spritesheet("golfball", "assets/golfball.png");
 	game.load.spritesheet("WhaleEnd", "assets/WhaleEnd.png", 2125, 850);
+	game.load.audio("whaley", "assets/sounds/whaleshort.mp3");
 };
 
 preloadState.prototype.create = function(){
