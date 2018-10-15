@@ -10,6 +10,8 @@ preloadState.prototype.preload = function(){
 	game.load.image("platform", "assets/platform.png");
 	game.load.image("star", "assets/star.png");
 	game.load.image("BlueW", "assets/blueWWbg.png");
+	game.load.image("PinkW", "assets/pinkWWbg.png");
+	game.load.image("YellW", "assets/yellWWbg.png");
 	game.load.spritesheet("DuckBG", "assets/BGSpriteSheet2.png", 2125, 850);
 	game.load.spritesheet("button", "assets/button_sprite_sheet_StartAgainExit.png", 192, 71);
 	game.load.spritesheet("murph", "assets/character.png", 32, 48);
@@ -31,6 +33,9 @@ preloadState.prototype.preload = function(){
 	game.load.image("Title", "assets/Title/TitleCandyVersion.png");
 	game.load.image("Acting","assets/images/Actinggamebackground.png");
 	game.load.image("Zutho","assets/images/background.png");
+
+	game.load.bitmapFont('carrier_command', 'assets/Fonts/carrier_command.png', 'assets/Fonts/carrier_command.xml');
+
 	//whale game
 	game.load.tilemap("WhaleMap", "assets/whale.json", null, Phaser.Tilemap.TILED_JSON);
 	game.load.image("WhaleTiles", "assets/placeholder whale.png");
