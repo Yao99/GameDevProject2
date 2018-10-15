@@ -3,9 +3,10 @@ let game1State = function(){
 };
 
 game1State.prototype.create = function(){
-	game.stage.backgroundColor = '#182d3b';
+	this.WBG = game.add.sprite(0, 0, "BlueW");
+	this.BG = game.add.sprite(155.5, 137.5, "Acting");
 
-	button0 = game.add.button(game.world.centerX - 95, 800, "button", actionOnClick, this, 0, 3, 3);
+	
 };
 
 game1State.prototype.update = function(){
