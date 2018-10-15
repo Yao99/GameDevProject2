@@ -3,6 +3,7 @@ let game3State = function(){
 };
 
 game3State.prototype.create = function(){
+	
 	game.stage.backgroundColor = '#182d3b';
 	
 	this.map = this.game.add.tilemap("WhaleMap");
@@ -35,7 +36,9 @@ game3State.prototype.create = function(){
 	var dist = 0;
 	
 	//hp
-	life = 1000;
+	life = 10;
+	
+	Whaley = game.add.audio("whaley");
 	
 };
 
@@ -92,6 +95,7 @@ game3State.prototype.failure = function(){
 	life -= 1;
 	game.camera.flash(0xffffff, 200);
 	game.camera.shake(0.001, 500);
+	Whaley.play();
 	
 	if(life<1){
 		
