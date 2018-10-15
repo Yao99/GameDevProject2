@@ -64,6 +64,9 @@ game3State.prototype.update = function(){
 		this.game.camera.follow();
 		this.win = true;
 	}
+	if(this.win){
+		game.input.onDown.add(this.change, this);
+	}
 	
 };
 
@@ -92,6 +95,11 @@ game3State.prototype.mover = function(){
 		
 	}
 	
+};
+
+game3State.prototype.change = function(){
+	preloadState.level_num = 3;
+	game.state.start("Trans");
 };
 
 game3State.prototype.failure = function(){

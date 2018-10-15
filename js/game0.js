@@ -19,6 +19,8 @@ game0State.prototype.create = function(){
     //preloadState.level_num = 1;
     //this.scoreText = game.add.text(16, 16, "Test" + preloadState.level_num, {fontSize: '32px', fill: '#000'});
 	game.time.events.repeat(Phaser.Timer.SECOND * 0.3, 1000, createTed, this);
+    this.counter = 0;
+    game.time.events.loop(Phaser.Timer.SECOND, checktime, this);
 
 
 };
@@ -56,6 +58,7 @@ game0State.prototype.update = function(){
 
     game.physics.arcade.overlap(this.player, this.Teds, this.onHit, null, this);
     this.Teds.forEach(checkifout, this, true);
+    
 };
 
 function createTed(){
@@ -91,4 +94,12 @@ function checkifout(Ted){
     	if(Ted.x > 2125 + 155.5 || Ted.y < 135.5 || Ted.x < 155.5){
     		Ted.kill();
     	}
+}
+
+function checktime(){
+    this.counter++;
+    if(this.counter == 10){
+        game.state.start("Trans");
+        preloadState.level_num = 0;
+    }
 }

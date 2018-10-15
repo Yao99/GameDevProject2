@@ -49,6 +49,18 @@ transState.prototype.update = function(){
 	}
 	if(counter == 360){
 		if(preloadState.level_num == -1){
+			game.state.start("Game0");
+			counter = 0;
+		}
+		if(preloadState.level_num == 0){
+			game.state.start("Game1");
+			counter = 0;
+		}
+		if(preloadState.level_num == 1){
+			game.state.start("Game2");
+			counter = 0;
+		}
+		if(preloadState.level_num == 2){
 			game.state.start("Game3");
 			counter = 0;
 		}
