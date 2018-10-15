@@ -16,7 +16,8 @@ game0State.prototype.create = function(){
 
 	this.Teds = game.add.group();
 	this.Teds.enableBody = true;
-
+    //preloadState.level_num = 1;
+    //this.scoreText = game.add.text(16, 16, "Test" + preloadState.level_num, {fontSize: '32px', fill: '#000'});
 	game.time.events.repeat(Phaser.Timer.SECOND * 0.3, 1000, createTed, this);
 
 
