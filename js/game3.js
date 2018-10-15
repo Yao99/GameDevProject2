@@ -35,7 +35,8 @@ game3State.prototype.create = function(){
 	var dist = 0;
 	
 	//hp
-	life = 10;
+	life = 1000;
+	
 };
 
 game3State.prototype.update = function(){
@@ -46,7 +47,16 @@ game3State.prototype.update = function(){
 	
 	if(this.player.y < 192)
 	{
-		game.state.start("Game0");
+		var graphics = game.add.graphics(100, 100);
+		graphics.lineStyle(2, 0x0000FF, 1);
+		graphics.beginFill(0x0000FF, 1);
+		graphics.drawRect(50, 250, 100, 100);
+		graphics.endFill();
+		
+		//victory animation
+		this.BG = game.add.sprite(155.5, 137.5, "WhaleEnd");
+		this.BG.animations.add("only", [0, 1], 3, true);
+		this.BG.animations.play("only");
 	}
 	
 };
@@ -62,10 +72,17 @@ game3State.prototype.mover = function(){
 	game.physics.arcade.moveToPointer(this.player, velocity);
 	//this.player.body.angularVelocity = 10;
 
-	//  if it's overlapping the mouse, don't move any more
-	if (Phaser.Rectangle.contains(this.player.body, game.input.x, game.input.y)){
+	if (Phaser.Rectangle.contains(this.player.body, game.input.x, game.input.y)){ }
+	else{
 		
-		this.player.body.velocity.setTo(0, 0);
+		dist = game.physics.arcade.distanceToPointer(this.player);
+	
+		velocity = dist/1.5;
+		if(velocity>400){ velocity = 400 }
+		else if(velocity<125){ velocity = 125 };
+		
+		game.physics.arcade.moveToPointer(this.player, velocity);
+		//this.player.body.angularVelocity = 10;
 		
 	}
 	
