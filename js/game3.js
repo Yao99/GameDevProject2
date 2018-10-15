@@ -35,7 +35,7 @@ game3State.prototype.create = function(){
 	var dist = 0;
 	
 	//hp
-	life = 5;
+	life = 10;
 };
 
 game3State.prototype.update = function(){
@@ -43,6 +43,11 @@ game3State.prototype.update = function(){
 	game.input.onDown.add(this.mover, this);
 	
 	this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
+	
+	if(this.player.y < 192)
+	{
+		game.state.start("Game0");
+	}
 	
 };
 
@@ -69,4 +74,11 @@ game3State.prototype.mover = function(){
 game3State.prototype.failure = function(){
 	life -= 1;
 	game.camera.flash(0xffffff, 200);
+	game.camera.shake(0.001, 500);
+	
+	if(life<1){
+		
+		game.state.start("Menu");
+		
+	}
 };
