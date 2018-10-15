@@ -21,6 +21,9 @@ game3State.prototype.create = function(){
 	
 	game.physics.enable(this.player, Phaser.Physics.ARCADE);
 	this.player.body.allowDrag = true;
+	this.player.body.drag.x = 150;
+	this.player.body.drag.y = 150;
+	//this.player.body.angularDrag = 1;
 	this.player.body.collideWorldBounds = true;
 	
 	//the camera will follow the player in the world
@@ -29,28 +32,25 @@ game3State.prototype.create = function(){
 
 game3State.prototype.update = function(){
 	
-	if (game.input.mousePointer.isDown)
-    {
-        //  400 is the speed it will move towards the mouse
-        game.physics.arcade.moveToPointer(this.player, 200);
-		//this.player.body.angularVelocity = 10;
-
-        //  if it's overlapping the mouse, don't move any more
-        if (Phaser.Rectangle.contains(this.player.body, game.input.x, game.input.y))
-        {
-            this.player.body.velocity.setTo(0, 0);
-        }
-    }
-    else
-    {
-        this.player.body.drag.x = 150;
-		this.player.body.drag.y = 150;
-		//this.player.body.angularDrag = 1;
-    }
+	game.input.onDown.add(this.movey, this);
 	
 	this.game.physics.arcade.collide(this.player, this.blockedLayer, this.failure);
 	
 };
+
+game3State.prototype.movey = function(){
+	
+	game.physics.arcade.moveToPointer(this.player, 200);
+	//this.player.body.angularVelocity = 10;
+
+	//  if it's overlapping the mouse, don't move any more
+	if (Phaser.Rectangle.contains(this.player.body, game.input.x, game.input.y)){
+		
+		this.player.body.velocity.setTo(0, 0);
+		
+	}
+	
+}
 
 game3State.prototype.failure = function(){
 	
