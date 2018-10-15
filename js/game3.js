@@ -47,10 +47,10 @@ game3State.prototype.update = function(){
 	
 	if(this.player.y < 192)
 	{
-		var graphics = game.add.graphics(100, 100);
+		var graphics = game.add.graphics(0, 0);
 		graphics.lineStyle(2, 0x0000FF, 1);
 		graphics.beginFill(0x0000FF, 1);
-		graphics.drawRect(50, 250, 100, 100);
+		graphics.drawRect(0, 0, 2432, 1120);
 		graphics.endFill();
 		
 		//victory animation
