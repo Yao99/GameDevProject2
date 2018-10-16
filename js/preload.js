@@ -20,7 +20,7 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("Duck", "assets/duckmanCar_sheetpixeld.png", 300, 301);
 	game.load.spritesheet("BlueTed", "assets/DMBlueTed_sheet.png", 100, 200);
 	game.load.spritesheet("PinkTed", "assets/DMPinkTedsheet.png", 100, 200);
-	game.load.audio("dmMusic", "assets/audio/duckman.wav");
+	game.load.audio("dmMusic", "assets/sounds/duckman.wav");
 	game.load.spritesheet("Intro", "assets/images/actingintrospritesheet.png", 400, 420);
 	game.load.spritesheet("Wave", "assets/images/wavingspritesheet.png", 400, 420);
 	game.load.spritesheet("Comedy", "assets/images/comedyspritesheet.png", 400, 420);

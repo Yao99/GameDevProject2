@@ -120,6 +120,7 @@ function checktime(){
         }
        
         preloadState.level_num = 0;
+		game.sound.stopAll();
         game.state.start("Trans");
     }
 }
