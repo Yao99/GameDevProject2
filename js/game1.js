@@ -202,7 +202,7 @@ function checktime_1(){
        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
        this.Act = 1;
     }
-    if(this.counter_1 == 47){
+    if(this.counter_1 == 50){
     	if(this.correct_1 >= 8){
             preloadState.performance = 2;
         }
