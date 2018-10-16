@@ -6,6 +6,7 @@ let preloadState = function(){
 
 preloadState.prototype.preload = function(){
 	level_num = 0;
+	performance = 0;
 	game.load.image("sky", "assets/sky.png");
 	game.load.image("platform", "assets/platform.png");
 	game.load.image("star", "assets/star.png");

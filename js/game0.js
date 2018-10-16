@@ -20,7 +20,9 @@ game0State.prototype.create = function(){
     //this.scoreText = game.add.text(16, 16, "Test" + preloadState.level_num, {fontSize: '32px', fill: '#000'});
 	game.time.events.repeat(Phaser.Timer.SECOND * 0.3, 1000, createTed, this);
     this.counter = 0;
+    this.missed = 0;
     game.time.events.loop(Phaser.Timer.SECOND, checktime, this);
+    this.scoreText = game.add.text(16, 16, "Missed: 0", {fontSize: '32px', fill: '#000'});
 
 
 };
@@ -91,15 +93,32 @@ game0State.prototype.onHit = function(player, Ted){
 }
 
 function checkifout(Ted){
-    	if(Ted.x > 2125 + 155.5 || Ted.y < 135.5 || Ted.x < 155.5){
+    	if(Ted.x > 2125 + 155.5 || Ted.y < 135.5){
     		Ted.kill();
+            
     	}
+        if(Ted.x < 155.5){
+            Ted.kill();
+            this.missed++;
+            this.scoreText.text = "Missed: " + this.missed;
+        }
 }
+        
 
 function checktime(){
     this.counter++;
     if(this.counter == 10){
-        game.state.start("Trans");
+        if(this.missed <= 3){
+            preloadState.performance = 2;
+        }
+        else if(this.missed > 3 && this.missed < 20){
+            preloadState.performance = 1;
+        }
+        else{
+            preloadState.performance = 0;
+        }
+       
         preloadState.level_num = 0;
+        game.state.start("Trans");
     }
 }
