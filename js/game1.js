@@ -6,6 +6,8 @@ let game1State = function(){
 game1State.prototype.create = function(){
 	this.WBG = game.add.sprite(0, 0, "GoldW");
 	this.BG = game.add.sprite(155.5, 137.5, "Acting");
+	button0 = game.add.button(820, 250, "ComB", actionOnClick1, this, 0, 0, 0);
+	button1 = game.add.button(1550, 250, "TraB", actionOnClick1, this, 0, 0, 0);
 
 	this.player = game.add.sprite(1050, 250, "Intro");
 	anim = this.player.animations.add("Intro_", [0, 1, 2], 2, false);
@@ -36,5 +38,9 @@ function animationStopped1(sprite, animation) {
 	anim = this.player.animations.add("Intro_", [0, 1, 2], 2, false);
     anim.play();
 }
+function actionOnClick1 () {
 
+    anim.play();
+
+}
 
