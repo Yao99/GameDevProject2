@@ -10,13 +10,13 @@ game1State.prototype.create = function(){
 	button1 = game.add.button(1550, 250, "TraB", actionOnClick1, this, 0, 0, 0);
 	Tra = null;
 	Com = null;
-	game.time.events.loop(Phaser.Timer.SECOND, checktime, this);
+	game.time.events.loop(Phaser.Timer.SECOND, checktime_1, this);
 	this.player = game.add.sprite(1050, 250, "Intro");
 	anim = this.player.animations.add("Intro_", [0, 1, 2], 3, false);
 	anim.onComplete.add(animationStopped, this);
 	anim.play();
-	this.counter = 0;
-	this.missed = 0;
+	this.counter_1 = 0;
+	this.missed_1 = 0;
 	this.Act = -1;
 	Wrong = game.add.audio("incorrect");
 	Right = game.add.audio("correct");
@@ -50,6 +50,7 @@ function actionOnClick1 () {
 		Tra.play();
 		if(this.Act != 0){
 			Wrong.play();
+			this.missed_1++;
 		}
 		else{
 			Right.play();
@@ -63,6 +64,7 @@ function actionOnClick2 () {
 		Fart.play();
     	if(this.Act != 1){
 			Wrong.play();
+			this.missed_1++;
 		}
 		else{
 			Right.play();
@@ -71,9 +73,9 @@ function actionOnClick2 () {
 }
 
 
-function checktime(){
-    this.counter++;
-    if(this.counter == 5){
+function checktime_1(){
+    this.counter_1++;
+    if(this.counter_1 == 5){
        let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "TraL");
        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
        let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "TraL");
@@ -83,15 +85,30 @@ function checktime(){
        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "ComR");
        this.Act = 0;
     }
-    if(this.counter == 7){
+    if(this.counter_1 == 7){
     	this.Act = -1;
     	this.bubbles.killAll();
     }
-    if(this.counter == 9){
+    if(this.counter_1 == 9){
        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
        let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComL");
        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
        this.Act = 1;
+    }
+    if(this.counter_1 == 12){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 14){
+    	let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "TraL");
+        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "TraL");
+        let bubble4 = this.bubbles.create(270 + 203 * 6 - 110, 585, "TraR");
+        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+    	this.Act = 0;
+    }
+    if(this.counter_1 == 16){
+    	this.Act = -1;
+    	this.bubbles.killAll();
     }
 
 }

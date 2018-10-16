@@ -64,7 +64,7 @@ preloadState.prototype.preload = function(){
 };
 
 preloadState.prototype.create = function(){
-	game.state.start("Game3");
+	game.state.start("Menu");
 	
 };
 
