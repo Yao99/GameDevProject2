@@ -20,6 +20,7 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("Duck", "assets/duckmanCar_sheetpixeld.png", 300, 301);
 	game.load.spritesheet("BlueTed", "assets/DMBlueTed_sheet.png", 100, 200);
 	game.load.spritesheet("PinkTed", "assets/DMPinkTedsheet.png", 100, 200);
+	game.load.audio("dmMusic", "assets/sounds/duckman.wav");
 	game.load.spritesheet("Intro", "assets/images/actingintrospritesheet.png", 400, 420);
 	game.load.spritesheet("Wave", "assets/images/wavingspritesheet.png", 400, 420);
 	game.load.spritesheet("Comedy", "assets/images/comedyspritesheet.png", 400, 420);
@@ -48,6 +49,8 @@ preloadState.prototype.preload = function(){
 	game.load.image("TraB","assets/images/tragedy.png");
 	game.load.audio("correct","assets/sounds/correct.wav");
 	game.load.audio("incorrect","assets/sounds/incorrect.wav");
+	game.load.audio("fart","assets/sounds/fart.mp3");
+	game.load.audio("medieval","assets/sounds/medieval.wav");
 
 
 	game.load.bitmapFont('carrier_command', 'assets/Fonts/carrier_command.png', 'assets/Fonts/carrier_command.xml');
@@ -58,6 +61,7 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("golfball", "assets/golfball.png");
 	game.load.spritesheet("WhaleEnd", "assets/WhaleEnd.png", 2125, 850);
 	game.load.audio("whaley", "assets/sounds/whaleshort.mp3");
+	game.load.audio("seinfeld", "assets/sounds/seinfeld.wav");
 };
 
 preloadState.prototype.create = function(){
