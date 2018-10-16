@@ -24,7 +24,7 @@ game1State.prototype.create = function(){
 	
 	Medieval = game.add.audio("medieval");
 	Medieval.play();
-	this.scoreText_1 = game.add.text(16, 16, "Correct: 0", {fontSize: '32px', fill: '#000'});
+	this.scoreText_1 = game.add.text(16, 16, "Correct: 0", {fontSize: '64px', fill: '#000'});
 };
 
 game1State.prototype.update = function(){

@@ -66,10 +66,10 @@ game3State.prototype.update = function(){
 		this.BG.animations.play("only");
 		this.game.camera.follow();
 		this.win = true;
-		if(life <= 3){
+		if(life <= 6){
             preloadState.performance = 2;
         }
-        else if(life > 3 && life < 20){
+        else if(life > 6 && life < 20){
             preloadState.performance = 1;
         }
         else{

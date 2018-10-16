@@ -22,7 +22,7 @@ game0State.prototype.create = function(){
     this.counter = 0;
     this.missed = 0;
     game.time.events.loop(Phaser.Timer.SECOND, checktime, this);
-    this.scoreText = game.add.text(16, 16, "Missed: 0", {fontSize: '32px', fill: '#000'});
+    this.scoreText = game.add.text(16, 16, "Missed: 0", {fontSize: '64px', fill: '#000'});
 	
 	DMMusic = game.add.audio("dmMusic");
 	DMMusic.play();
@@ -108,11 +108,11 @@ function checkifout(Ted){
 
 function checktime(){
     this.counter++;
-    if(this.counter == 10){
-        if(this.missed <= 3){
+    if(this.counter == 30){
+        if(this.missed <= 9){
             preloadState.performance = 2;
         }
-        else if(this.missed > 3 && this.missed < 20){
+        else if(this.missed > 9 && this.missed < 20){
             preloadState.performance = 1;
         }
         else{
