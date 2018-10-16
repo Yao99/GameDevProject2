@@ -13,12 +13,17 @@ preloadState.prototype.preload = function(){
 	game.load.image("BlueW", "assets/blueWWbg.png");
 	game.load.image("PinkW", "assets/pinkWWbg.png");
 	game.load.image("YellW", "assets/yellWWbg.png");
+	game.load.image("GoldW", "assets/images/actingborder.png");
 	game.load.spritesheet("DuckBG", "assets/BGSpriteSheet2.png", 2125, 850);
 	game.load.spritesheet("button", "assets/button_sprite_sheet_StartAgainExit.png", 192, 71);
 	game.load.spritesheet("murph", "assets/character.png", 32, 48);
 	game.load.spritesheet("Duck", "assets/duckmanCar_sheetpixeld.png", 300, 301);
 	game.load.spritesheet("BlueTed", "assets/DMBlueTed_sheet.png", 100, 200);
 	game.load.spritesheet("PinkTed", "assets/DMPinkTedsheet.png", 100, 200);
+	game.load.spritesheet("Intro", "assets/images/actingintrospritesheet.png", 400, 420);
+	game.load.spritesheet("Wave", "assets/images/wavingspritesheet.png", 400, 420);
+	game.load.spritesheet("Comedy", "assets/images/comedyspritesheet.png", 400, 420);
+	game.load.spritesheet("Tragedy", "assets/images/tragedyspritesheet.png", 400, 420);
 	game.load.image("Transition1", "assets/Transition PNGs/Ta1.png");
 	game.load.image("Transition2", "assets/Transition PNGs/Ta2.png");
 	game.load.image("Transition3", "assets/Transition PNGs/Ta3.png");
@@ -34,6 +39,11 @@ preloadState.prototype.preload = function(){
 	game.load.image("Title", "assets/Title/TitleCandyVersion.png");
 	game.load.image("Acting","assets/images/Actinggamebackground.png");
 	game.load.image("Zutho","assets/images/background.png");
+	game.load.image("ComR","assets/images/comedyspeechbubble.png");
+	game.load.image("ComL","assets/images/comedyspeechbubbleleft.png");
+	game.load.image("TraR","assets/images/tragedyspeechbubble.png");
+	game.load.image("TraL","assets/images/tragedyspeechbubbleleft.png");
+
 
 	game.load.bitmapFont('carrier_command', 'assets/Fonts/carrier_command.png', 'assets/Fonts/carrier_command.xml');
 
@@ -46,7 +56,7 @@ preloadState.prototype.preload = function(){
 };
 
 preloadState.prototype.create = function(){
-	game.state.start("Menu");
+	game.state.start("Game1");
 	
 };
 
