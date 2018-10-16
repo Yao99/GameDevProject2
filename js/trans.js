@@ -84,9 +84,9 @@ transState.prototype.update = function(){
 			game.state.start("Game3");
 			counter = 0;
 		}
-		if(preloadState.level_num == 2){
+		if(preloadState.level_num == 3){
 			this.offset = 0;
-			game.state.start("Game3");
+			game.state.start("Menu");
 			counter = 0;
 
 		}
