@@ -16,7 +16,7 @@ game1State.prototype.create = function(){
 	anim.onComplete.add(animationStopped, this);
 	anim.play();
 	this.counter_1 = 0;
-	this.missed_1 = 0;
+	this.correct_1 = 0;
 	this.Act = -1;
 	Wrong = game.add.audio("incorrect");
 	Right = game.add.audio("correct");
@@ -53,10 +53,10 @@ function actionOnClick1 () {
 		Tra.play();
 		if(this.Act != 0){
 			Wrong.play();
-			this.missed_1++;
 		}
 		else{
 			Right.play();
+			this.correct_1++;
 		}
 	}  
 }
@@ -67,10 +67,10 @@ function actionOnClick2 () {
 		Fart.play();
     	if(this.Act != 1){
 			Wrong.play();
-			this.missed_1++;
 		}
 		else{
 			Right.play();
+			this.correct_1++;
 		}
     }
 }
@@ -113,7 +113,105 @@ function checktime_1(){
     	this.Act = -1;
     	this.bubbles.killAll();
     }
-
+    if(this.counter_1 == 18){
+    	let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "TraL");
+        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
+        let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "TraR");
+        let bubble3 = this.bubbles.create(270 + 203 * 4 + 80, 585, "ComR");
+        let bubble4 = this.bubbles.create(270 + 203 * 6 - 110, 585, "TraR");
+        let bubble5 = this.bubbles.create(270 + 203 * 7 - 110, 585, "ComR");
+        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+        this.Act = 0;
+    }
+    if(this.counter_1 == 21){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 23){
+    	let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "TraL");
+        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "TraL");
+        let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "TraL");
+        let bubble3 = this.bubbles.create(270 + 203 * 4 + 80, 585, "TraR");
+        let bubble4 = this.bubbles.create(270 + 203 * 6 - 110, 585, "TraR");
+        let bubble5 = this.bubbles.create(270 + 203 * 7 - 110, 585, "ComR");
+        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+        this.Act = 0;
+    }
+    if(this.counter_1 == 26){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 28){
+    	let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "ComL");
+        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
+        let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComL");
+        let bubble3 = this.bubbles.create(270 + 203 * 4 + 80, 585, "ComR");
+        let bubble4 = this.bubbles.create(270 + 203 * 6 - 110, 585, "ComR");
+        let bubble5 = this.bubbles.create(270 + 203 * 7 - 110, 585, "ComR");
+        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "ComR");
+        this.Act = 1;
+    }
+    if(this.counter_1 == 30){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 32){
+    	let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "TraL");
+        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
+        let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "TraL");
+        let bubble5 = this.bubbles.create(270 + 203 * 7 - 110, 585, "ComR");
+        let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+        this.Act = 0;
+    }
+    if(this.counter_1 == 34){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 36){
+       let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "ComL");
+       let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
+       let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComL");
+       let bubble3 = this.bubbles.create(270 + 203 * 4 + 80, 585, "TraR");
+       let bubble4 = this.bubbles.create(270 + 203 * 6 - 110, 585, "TraR");
+       let bubble5 = this.bubbles.create(270 + 203 * 7 - 110, 585, "TraR");
+       let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+       this.Act = 0;
+    }
+    if(this.counter_1 == 39){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 41){
+       let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "ComL");
+       let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
+       let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComL");
+       let bubble3 = this.bubbles.create(270 + 203 * 4 + 80, 585, "TraR");
+       let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "ComR");
+       this.Act = 1;
+    }
+    if(this.counter_1 == 43){
+    	this.Act = -1;
+    	this.bubbles.killAll();
+    }
+    if(this.counter_1 == 45){
+       let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "ComL");
+       let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComL");
+       let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+       this.Act = 1;
+    }
+    if(this.counter_1 == 47){
+    	if(this.correct_1 >= 8){
+            preloadState.performance = 2;
+        }
+        else if(this.correct_1 < 8 && this.correct_1 > 5){
+            preloadState.performance = 1;
+        }
+        else{
+            preloadState.performance = 0;
+        }
+        preloadState.level_num = 1;
+    	game.state.start("Trans");
+    }    
 }
 
 // preloadState.level_num = 0;
