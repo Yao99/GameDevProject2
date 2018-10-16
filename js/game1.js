@@ -17,7 +17,7 @@ game1State.prototype.create = function(){
 	anim.play();
 	this.counter = 0;
 	Act = -1;
-	this.bubbles = game.add.group();
+	
 };
 
 game1State.prototype.update = function(){
@@ -38,6 +38,7 @@ function animationStopped1(sprite, animation) {
     this.player = game.add.sprite(1050, 250, "Actions");
 	Tra = this.player.animations.add("Actions_Tra", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], 4, false);
 	Com = this.player.animations.add("Actions_Tra", [24, 25, 26, 27, 28, 29, 30, 31, 32, 33], 4, false);
+	this.bubbles = game.add.group();
 
 }
 
@@ -56,10 +57,13 @@ function actionOnClick2 () {
 
 function checktime(){
     this.counter++;
-    if(this.counter == 1){
+    if(this.counter == 5){
        let bubble0 = this.bubbles.create(270 + 203 * 0, 585, "TraL");
        let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
-       let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComR");
+       let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "TraL");
+       let bubble3 = this.bubbles.create(270 + 203 * 4, 585, "TraR");
+       let bubble4 = this.bubbles.create(270 + 203 * 5, 585, "TraR");
+       let bubble5 = this.bubbles.create(270 + 203 * 6, 585, "ComR");
     }
 }
 
