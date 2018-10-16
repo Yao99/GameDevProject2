@@ -62,6 +62,9 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("WhaleEnd", "assets/WhaleEnd.png", 2125, 850);
 	game.load.audio("whaley", "assets/sounds/whaleshort.mp3");
 	game.load.audio("seinfeld", "assets/sounds/seinfeld.wav");
+	
+	//transition
+	game.load.audio("lamp", "assets/sounds/lamp.mp3");
 };
 
 preloadState.prototype.create = function(){

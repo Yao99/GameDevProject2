@@ -213,7 +213,7 @@ function checktime_1(){
             preloadState.performance = 0;
         }
         preloadState.level_num = 1;
-        Medieval.stop();
+		game.sound.stopAll();
     	game.state.start("Trans");
     }    
 }
