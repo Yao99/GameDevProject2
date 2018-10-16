@@ -21,6 +21,9 @@ game1State.prototype.create = function(){
 	Wrong = game.add.audio("incorrect");
 	Right = game.add.audio("correct");
 	Fart = game.add.audio("fart");
+	
+	Medieval = game.add.audio("medieval");
+	Medieval.play();
 };
 
 game1State.prototype.update = function(){

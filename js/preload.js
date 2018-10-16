@@ -50,6 +50,7 @@ preloadState.prototype.preload = function(){
 	game.load.audio("correct","assets/sounds/correct.wav");
 	game.load.audio("incorrect","assets/sounds/incorrect.wav");
 	game.load.audio("fart","assets/sounds/fart.mp3");
+	game.load.audio("medieval","assets/sounds/medieval.wav");
 
 
 	game.load.bitmapFont('carrier_command', 'assets/Fonts/carrier_command.png', 'assets/Fonts/carrier_command.xml');
