@@ -38,7 +38,7 @@ game3State.prototype.create = function(){
 	var dist = 0;
 	
 	//hp
-	life = 10;
+	life = 0;
 	
 	Whaley = game.add.audio("whaley");
 	
@@ -63,6 +63,15 @@ game3State.prototype.update = function(){
 		this.BG.animations.play("only");
 		this.game.camera.follow();
 		this.win = true;
+		if(life <= 3){
+            preloadState.performance = 2;
+        }
+        else if(life > 3 && life < 20){
+            preloadState.performance = 1;
+        }
+        else{
+            preloadState.performance = 0;
+        }
 	}
 	if(this.win){
 		game.input.onDown.add(this.change, this);
@@ -99,18 +108,19 @@ game3State.prototype.mover = function(){
 
 game3State.prototype.change = function(){
 	preloadState.level_num = 3;
+	//should be change to the ending scene
 	game.state.start("Trans");
 };
 
 game3State.prototype.failure = function(){
-	life -= 1;
+	life += 1;
 	game.camera.flash(0xffffff, 200);
 	game.camera.shake(0.001, 500);
 	Whaley.play();
 	
-	if(life<1){
+	// if(life<1){
 		
-		game.state.start("Menu");
+	// 	game.state.start("Menu");
 		
-	}
+	// }
 };
