@@ -40,7 +40,10 @@ game3State.prototype.create = function(){
 	//hp
 	life = 0;
 	
+	//sound
 	Whaley = game.add.audio("whaley");
+	Seinfeld = game.add.audio("seinfeld");
+	Seinfeld.play();
 	
 };
 
@@ -108,6 +111,7 @@ game3State.prototype.mover = function(){
 
 game3State.prototype.change = function(){
 	preloadState.level_num = 3;
+	game.sound.stopAll();
 	//should be change to the ending scene
 	game.state.start("Trans");
 };

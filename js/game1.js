@@ -20,7 +20,7 @@ game1State.prototype.create = function(){
 	this.Act = -1;
 	Wrong = game.add.audio("incorrect");
 	Right = game.add.audio("correct");
-	
+	Fart = game.add.audio("fart");
 };
 
 game1State.prototype.update = function(){
@@ -60,6 +60,7 @@ function actionOnClick1 () {
 function actionOnClick2 () {
     if(Com!=null){
     	Com.play();
+		Fart.play();
     	if(this.Act != 1){
 			Wrong.play();
 		}

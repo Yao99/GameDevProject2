@@ -23,8 +23,9 @@ game0State.prototype.create = function(){
     this.missed = 0;
     game.time.events.loop(Phaser.Timer.SECOND, checktime, this);
     this.scoreText = game.add.text(16, 16, "Missed: 0", {fontSize: '32px', fill: '#000'});
-
-
+	
+	DMMusic = game.add.audio("dmMusic");
+	DMMusic.play();
 };
 
 game0State.prototype.update = function(){
