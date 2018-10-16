@@ -78,7 +78,7 @@ transState.prototype.update = function(){
 		}
 		if(preloadState.level_num == 1){
 			this.offset = 0;
-			game.state.start("Game2");
+			game.state.start("Game3");
 			counter = 0;
 		}
 		if(preloadState.level_num == 2){
