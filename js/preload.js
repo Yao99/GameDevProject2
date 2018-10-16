@@ -24,6 +24,7 @@ preloadState.prototype.preload = function(){
 	game.load.spritesheet("Wave", "assets/images/wavingspritesheet.png", 400, 420);
 	game.load.spritesheet("Comedy", "assets/images/comedyspritesheet.png", 400, 420);
 	game.load.spritesheet("Tragedy", "assets/images/tragedyspritesheet.png", 400, 420);
+	game.load.spritesheet("Actions","assets/images/combinedspritesheet.png", 400, 420);
 	game.load.image("Transition1", "assets/Transition PNGs/Ta1.png");
 	game.load.image("Transition2", "assets/Transition PNGs/Ta2.png");
 	game.load.image("Transition3", "assets/Transition PNGs/Ta3.png");
