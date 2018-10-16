@@ -38,35 +38,35 @@ transState.prototype.update = function(){
 	if(counter == this.offset+270){
 		this.BG = game.add.image(155.5, 137.5, "Transition4")
 	}
-	if(counter == this.offset+290){
+	if(counter == this.offset+280){
 		this.BG = game.add.image(155.5, 137.5, "Transition5")
 	}
-	if(counter == this.offset+310){
+	if(counter == this.offset+290){
 		this.BG = game.add.image(155.5, 137.5, "Transition6")
 	}
-	if(counter == this.offset+330){
+	if(counter == this.offset+300){
 		this.BG = game.add.image(155.5, 137.5, "Transition7")
 	}
-	if(counter == this.offset+350){
+	if(counter == this.offset+310){
 		this.BG = game.add.image(155.5, 137.5, "Transition8")
 	}
-	if(counter == this.offset+370){
+	if(counter == this.offset+320){
 		this.BG = game.add.image(155.5, 137.5, "Transition9")
 	}
-	if(counter == this.offset+390){
+	if(counter == this.offset+330){
 		this.BG = game.add.image(155.5, 137.5, "Transition10")
 	}
-	if(counter == this.offset+410){
+	if(counter == this.offset+340){
 		this.BG = game.add.image(155.5, 137.5, "Transition11")
 	}
-	if(counter == this.offset+430){
+	if(counter == this.offset+360){
 		Lamp.play();
 		this.BG = game.add.image(155.5, 137.5, "Transition12")
 	}
-	if(counter == this.offset+450){
+	if(counter == this.offset+380){
 		this.BG = game.add.image(155.5, 137.5, "Transition11")
 	}
-	if(counter == this.offset+460){
+	if(counter == this.offset+390){
 		if(preloadState.level_num == -1){
 			this.offset = 0;
 			game.state.start("Game0");
