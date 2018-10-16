@@ -3,6 +3,8 @@ let transState = function(){
 };
 
 transState.prototype.create = function(){
+	Lamp = game.add.audio("lamp");
+	
 	this.offset = 0;
 	this.WBG = game.add.sprite(0, 0, "BlueW");
 	// this.Text = game.add.text(155.5, 137.5, "GOOD", {fontSize: '320px', fill: '#000'});
@@ -58,6 +60,7 @@ transState.prototype.update = function(){
 		this.BG = game.add.image(155.5, 137.5, "Transition11")
 	}
 	if(counter == this.offset+430){
+		Lamp.play();
 		this.BG = game.add.image(155.5, 137.5, "Transition12")
 	}
 	if(counter == this.offset+450){
