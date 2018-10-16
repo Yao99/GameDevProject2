@@ -16,7 +16,10 @@ game1State.prototype.create = function(){
 	anim.onComplete.add(animationStopped, this);
 	anim.play();
 	this.counter = 0;
+	this.missed = 0;
 	this.Act = -1;
+	Wrong = game.add.audio("incorrect");
+	Right = game.add.audio("correct");
 	
 };
 
@@ -48,6 +51,9 @@ function actionOnClick1 () {
 		if(this.Act != 0){
 			Wrong.play();
 		}
+		else{
+			Right.play();
+		}
 	}  
 }
 
@@ -56,6 +62,9 @@ function actionOnClick2 () {
     	Com.play();
     	if(this.Act != 1){
 			Wrong.play();
+		}
+		else{
+			Right.play();
 		}
     }
 }
@@ -75,7 +84,15 @@ function checktime(){
     }
     if(this.counter == 7){
     	this.Act = -1;
+    	this.bubbles.killAll();
     }
+    if(this.counter == 9){
+       let bubble1 = this.bubbles.create(270 + 203 * 1, 585, "ComL");
+       let bubble2 = this.bubbles.create(270 + 203 * 3 - 5, 585, "ComL");
+       let bubble6 = this.bubbles.create(270 + 203 * 8 - 110, 585, "TraR");
+       this.Act = 1;
+    }
+
 }
 
 // preloadState.level_num = 0;
