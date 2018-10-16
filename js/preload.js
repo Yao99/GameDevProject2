@@ -46,6 +46,8 @@ preloadState.prototype.preload = function(){
 	game.load.image("TraL","assets/images/tragedyspeechbubbleleft.png");
 	game.load.image("ComB","assets/images/comedy.png");
 	game.load.image("TraB","assets/images/tragedy.png");
+	game.load.audio("correct","assets/sounds/correct.wav");
+	game.load.audio("incorrect","assets/sounds/incorrect.wav");
 
 
 	game.load.bitmapFont('carrier_command', 'assets/Fonts/carrier_command.png', 'assets/Fonts/carrier_command.xml');
